@@ -7,6 +7,8 @@
     <meta name="description" content="Tutorial-sports-app : " />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
     <title>Tutorial-sports-app</title>
   </head>
@@ -54,6 +56,14 @@
 }
 
 document.getElementById('test').innerHTML=get('access_token');
+
+$.ajax({
+	  url: 'http://api.cbssports.com/fantasy/league/teams?access_token='+get('access_token')+'&response_format=json',
+	  success: function(data) {
+		  console.log(data);
+	    $('#test').html(data);
+	  }
+	});
     </script>
 
   </body>
