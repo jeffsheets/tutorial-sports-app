@@ -34,6 +34,8 @@
         <h1>Test Sports App</h1>
 
 <p>testing out cbssportslines developer app accounts...</p>
+
+<b id="test"></b>
       </section>
     </div>
 
@@ -45,7 +47,14 @@
       </footer>
     </div>
 
-    
+    <script type="text/javascript">
+    function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+
+document.getElementById('test').innerHTML=get('access_token');
+    </script>
 
   </body>
 </html>
